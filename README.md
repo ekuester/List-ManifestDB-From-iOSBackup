@@ -11,22 +11,14 @@ The structure of this database is as follows
 
 $ sqlite3
 
-sqlite> .open Manifest.db
-
-sqlite> .fullschema
-
-CREATE TABLE Files (fileID TEXT PRIMARY KEY, domain TEXT, relativePath TEXT, flags INTEGER, file BLOB);
-
-CREATE INDEX FilesDomainIdx ON Files(domain);
-
-CREATE INDEX FilesRelativePathIdx ON Files(relativePath);
-
-CREATE INDEX FilesFlagsIdx ON Files(flags);
-
-CREATE TABLE Properties (key TEXT PRIMARY KEY, value BLOB);
-
-.quit
-
+sqlite> .open Manifest.db  
+sqlite> .fullschema  
+CREATE TABLE Files (fileID TEXT PRIMARY KEY, domain TEXT, relativePath TEXT, flags INTEGER, file BLOB);  
+CREATE INDEX FilesDomainIdx ON Files(domain);  
+CREATE INDEX FilesRelativePathIdx ON Files(relativePath);  
+CREATE INDEX FilesFlagsIdx ON Files(flags);  
+CREATE TABLE Properties (key TEXT PRIMARY KEY, value BLOB);  
+.quit  
 
 Use the program for extracting of stored files which could not be recoverd otherwise.
 Much of the code from the older program to decode Manifest.mbdb was recycled ;-)
